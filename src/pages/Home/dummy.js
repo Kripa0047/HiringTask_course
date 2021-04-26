@@ -2,7 +2,7 @@ import Thumbnail1 from "../../asset/images/1.jpg";
 import Thumbnail2 from "../../asset/images/2.jpg";
 import Thumbnail3 from "../../asset/images/3.jpg";
 
-export default [
+const data = [
         {
                 rating: 3,
                 views: "1.7k",
@@ -124,3 +124,5 @@ export default [
                 viewPercent: 50,
         }
 ];
+
+export default data;

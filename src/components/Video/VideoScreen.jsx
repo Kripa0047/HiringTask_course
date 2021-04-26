@@ -13,31 +13,31 @@ const VideoScreen = () => {
                 else video.current.pause();
         }
 
-        const onTimeUpdate = () => {
-                let currentTime = video?.current?.currentTime ?? 0;
-                let duration = video?.current?.duration ?? 0;
-                let percent = (currentTime / duration) * 100;
-
-                currentTime = Math.ceil(currentTime);
-                duration = Math.ceil(duration);
-
-                let finalTimeString = '';
-
-                let min = Math.floor(currentTime / 60) ?? 0;
-                let sec = currentTime % 60 ?? 0;
-
-                finalTimeString += `${min < 10 ? '0' + min : min}:${sec < 10 ? '0' + sec : sec}`;
-
-                min = Math.floor(duration / 60) ?? 0;
-                sec = duration % 60 ?? 0;
-
-                finalTimeString += ` / ${min < 10 ? '0' + min : min}:${sec < 10 ? '0' + sec : sec}`
-
-                setPlayTime(finalTimeString);
-                setJuicePercent(percent);
-        }
-
         useEffect(() => {
+                const onTimeUpdate = () => {
+                        let currentTime = video?.current?.currentTime ?? 0;
+                        let duration = video?.current?.duration ?? 0;
+                        let percent = (currentTime / duration) * 100;
+
+                        currentTime = Math.ceil(currentTime);
+                        duration = Math.ceil(duration);
+
+                        let finalTimeString = '';
+
+                        let min = Math.floor(currentTime / 60) ?? 0;
+                        let sec = currentTime % 60 ?? 0;
+
+                        finalTimeString += `${min < 10 ? '0' + min : min}:${sec < 10 ? '0' + sec : sec}`;
+
+                        min = Math.floor(duration / 60) ?? 0;
+                        sec = duration % 60 ?? 0;
+
+                        finalTimeString += ` / ${min < 10 ? '0' + min : min}:${sec < 10 ? '0' + sec : sec}`
+
+                        setPlayTime(finalTimeString);
+                        setJuicePercent(percent);
+                }
+
                 video.current.ontimeupdate = onTimeUpdate;
         }, [video]);
 

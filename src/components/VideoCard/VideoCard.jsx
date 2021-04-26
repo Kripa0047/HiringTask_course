@@ -19,7 +19,7 @@ const VideoCard = (props) => {
                         }
                 });
                 setRating(rating);
-        }, []);
+        }, [props.rating]);
 
         return (
                 <div className="video-card">
