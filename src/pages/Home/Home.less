@@ -1,0 +1,111 @@
+@import "../../metadata/styles.less";
+
+.home {
+    display: flex;
+    padding: 10px 20px;
+    justify-content: space-between;
+
+    .video-details  {
+        margin: 20px 10px;
+
+        .button-container   {
+            display: flex;
+        }
+
+        .tag-container  {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+
+            .tag   {
+                color:  #3eb62e;
+                font-size: 110%;
+                margin-right: 30px;
+                margin-bottom: 5px;
+                cursor: pointer;
+            }
+
+            .add-tags   {
+                height: 25px;
+                width: 25px;
+                cursor: pointer;
+                margin-bottom: 5px;
+            }
+        }
+
+        .overview   {
+            display: flex;
+            margin-top: 20px;
+
+            .video-title    {
+                font-weight: 600;
+                font-size: 160%;
+            }
+
+            .video-details-text {
+                font-size: 110%;
+                margin-top: 10px;
+            }
+
+            .tool-icons {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+
+                img {
+                    height: 25px;
+                    width: 25px;
+                    margin-left: 10px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .recommended-video  {
+        margin-left: 40px;
+        .recommended    {
+            background-color:  @primary_background_color;
+            padding: 8px 13px;
+            border-radius: 20px;
+            font-weight: 600;
+            color: #646464;
+            font-size: 125%;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .home   {
+        flex-direction: column;
+        padding: 10px;
+
+        .recommended-video  {
+            margin-left: 0;
+            padding: 10px 0;
+            
+            .recommended    {
+                font-size: 110%;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .home   {
+        .video-details  {
+            .overview   {
+                flex-direction: column;
+                justify-content: flex-start;
+
+                .tool-icons {
+                    justify-content: flex-start;
+                }
+            }
+        }
+    }
+}

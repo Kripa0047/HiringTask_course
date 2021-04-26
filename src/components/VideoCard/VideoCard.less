@@ -1,0 +1,137 @@
+@import  "../../metadata/styles.less";
+
+.video-card     {
+        display: flex;
+        border-radius: 15px;
+        transition: .3s;
+        cursor: pointer;
+        margin-bottom: 30px;
+
+        .thumbnail-container    {
+                width:  210px;
+                margin-right: 15px;
+
+                .duration       {
+                        position: absolute;
+                        bottom: 5px;
+                        right: 10px;
+                        color: #fff;
+                        background-color: @primary_color;
+                        padding: 1px 8px;
+                        border-radius: 10px;
+                }
+
+                .juice-container        {
+                        position: relative;
+                        width: 90%;
+                        height: 5px;
+                        background-color: #cecece;
+                        margin: 4px auto;
+                        border-radius: 10px;
+                        overflow: hidden;
+
+                        .juice  {
+                                height: inherit;
+                                width: 0%;
+                                background-color: @primary_color;
+
+                        }
+                }
+
+                img     {
+                        width: 100%;
+                        height: 130px;
+                        object-fit: cover;
+                        border-radius: 15px;
+                }
+        }
+
+        .details-container      {
+                width: 310px;
+
+                .card-row       {
+                        display: flex;
+                        align-items: flex-start;
+                        height: 100%;
+                        justify-content: space-between;
+
+                        .main-content   {
+                                position: relative;
+                                height: 100%;
+
+                                .video-description    {
+                                        font-weight: 600;
+                                        display: -webkit-box;
+                                        -webkit-line-clamp: 2;
+                                        -webkit-box-orient: vertical;  
+                                        overflow: hidden;
+                                        font-size: 115%;
+                                }
+        
+                                .video-title    {
+                                        color: #707070;
+                                        font-weight: 600;
+                                }
+
+                                .bottom-details {
+                                        margin-top: 30px;
+
+                                        .star   {
+                                                height: 15px;
+                                                margin-right: 10px;
+                                        }
+
+                                        .stats  {
+                                                display: flex;
+                                                align-items: center;
+                                                margin-top: 4px;
+                                        }
+                                }
+                        }
+
+                        .more   {
+                                width: 18px;
+                                margin-left: 10px;
+                        }
+                }
+        }
+}
+
+
+@media only screen and (max-width: 1200px) {
+        .video-card     {
+                .thumbnail-container    {
+                        width: 300px;
+                }
+
+                .details-container      {
+                        width: 100%;
+                }
+        }
+}
+
+@media only screen and (max-width: 500px) {
+        .video-card     {
+                flex-direction: column;
+
+                .thumbnail-container    {
+                        width: 100%;
+                        
+                        img     {
+                                height:  50vw;
+                        }
+                }
+
+                .details-container      {
+                        margin-top: 12px;
+                        .card-row       {
+                                .main-content   {
+                                        .bottom-details {
+                                                margin-top: 5px;
+                                                position: static;
+                                        }
+                                }
+                        }
+                }
+        }
+}

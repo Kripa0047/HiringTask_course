@@ -1,0 +1,50 @@
+@import "../../metadata/styles.less";
+
+.video-container {
+        width:  100%;
+        transition: .3s;
+        background-color: #fff;
+
+        .video-player        {
+                width: 100%;
+                outline: none;
+                border-radius: 15px;
+        }
+
+        .controls {
+                display: flex;
+                margin: 10px;
+                justify-content: space-between;
+                align-items: center;
+
+                .purple-juice-container   {
+                        width: calc(100% - 160px);
+                        height: 6px;
+                        background-color: rgb(206, 206, 206);
+                        border-radius: 10px;
+                        position: relative;
+                        overflow: hidden;
+
+                        .purple-juice   {
+                                position: absolute;
+                                left: 0;
+                                height: 6px;
+                                background-color: @primary_color;
+                                width: 0%;
+                        }
+                }
+
+                .duration       {
+                        width: 150px;
+                        text-align: right;
+                        font-weight: 600;
+                        color: #9c9c9c;
+                }
+        }
+}
+
+@media only screen and (max-width: 1200px) {
+        .video-container       {
+                width:  100%;
+        }
+}
